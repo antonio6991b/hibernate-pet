@@ -14,6 +14,7 @@ public class Main {
 
         SessionFactory sessionFactory = new Configuration()
                 .configure()
+                .addAnnotatedClass(Car.class)
                 .buildSessionFactory();
         CarDao carDao = new CarDao(sessionFactory);
 

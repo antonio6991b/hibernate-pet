@@ -1,6 +1,7 @@
 package ru.bolgov.restart.hibernate.dao;
 
 import org.hibernate.*;
+import org.hibernate.cfg.Configuration;
 import ru.bolgov.restart.hibernate.pojo.Car;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ public class CarDao {
 
     public CarDao(SessionFactory sessionFactory){
         this.sessionFactory = sessionFactory;
+
     }
 
     public boolean addCar(Car car){

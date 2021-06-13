@@ -15,7 +15,5 @@
             jdbc:sqlite:identifier.sqlite
         </property>
 
-<!--        <mapping class="ru.bolgov.restart.hibernate.pojo.Car"/>-->
-
     </session-factory>
 </hibernate-configuration>

@@ -1,14 +1,16 @@
 package ru.bolgov.restart.hibernate.dao;
 
 import org.hibernate.*;
-import org.hibernate.cfg.Configuration;
 import ru.bolgov.restart.hibernate.pojo.Car;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Class provide CRUD operations to Database "CARS"
+ *
+ */
 public class CarDao {
     private final SessionFactory sessionFactory;
 
@@ -17,6 +19,11 @@ public class CarDao {
 
     }
 
+    /**
+     * Add a Car to the database
+     * @param car
+     * @return true if the car add to database
+     */
     public boolean addCar(Car car){
 
         Transaction transaction = null;
@@ -38,6 +45,11 @@ public class CarDao {
         }
     }
 
+    /**
+     * Get all cars from the database
+     * @return all cars from the database
+     * @throws CarDaoException
+     */
     public List<Car> getAllCars() throws CarDaoException {
         List<Car> cars = new ArrayList<>();
 
@@ -60,6 +72,12 @@ public class CarDao {
         }
     }
 
+    /**
+     * Get car from the database by ID
+     * @param id
+     * @return car
+     * @throws CarDaoException
+     */
     public Car getCar(int id) throws CarDaoException {
         Car car = null;
         Transaction transaction = null;
@@ -82,6 +100,12 @@ public class CarDao {
         }
     }
 
+    /**
+     * Update owner of the car by ID
+     * @param id id of the changing car
+     * @param owner new value of the owner field.
+     * @return true if owner updated
+     */
     public boolean updateOwner(int id, String owner){
         Transaction transaction = null;
 
@@ -104,6 +128,11 @@ public class CarDao {
         }
     }
 
+    /**
+     * remove car from the database by id
+     * @param id
+     * @return true if remove successfully
+     */
     public boolean removeCar(int id){
         Transaction transaction = null;
 
